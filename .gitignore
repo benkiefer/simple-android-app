@@ -3,4 +3,5 @@
 *.ipr
 bin
 gen
-
+out
+.ant-targets-build.xml
