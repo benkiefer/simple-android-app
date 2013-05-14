@@ -5,19 +5,17 @@ import org.eclipse.egit.github.core.Repository;
 import org.eclipse.egit.github.core.service.RepositoryService;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
-public class GetRepositoriesTask extends AsyncTask<String, Void, String> {
+public class GetRepositoriesTask extends AsyncTask<String, Void, List<Repository>> {
     @Override
-    protected String doInBackground(String... strings) {
-        RepositoryService service = new RepositoryService();
+    protected List<Repository> doInBackground(String... strings) {
         try {
-            for (Repository repository : service.getRepositories(strings[0])) {
-                System.out.println(repository.getName());
-            }
+            List<Repository> repositories = new RepositoryService().getRepositories(strings[0]);
+            return repositories;
         } catch (IOException e) {
-            e.printStackTrace();
+            return new ArrayList<Repository>();
         }
-
-        return "boom";
     }
 }
