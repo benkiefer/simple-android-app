@@ -12,8 +12,7 @@ public class GetRepositoriesTask extends AsyncTask<String, Void, List<Repository
     @Override
     protected List<Repository> doInBackground(String... strings) {
         try {
-            List<Repository> repositories = new RepositoryService().getRepositories(strings[0]);
-            return repositories;
+            return new RepositoryService().getRepositories(strings[0]);
         } catch (IOException e) {
             return new ArrayList<Repository>();
         }

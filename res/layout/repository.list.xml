@@ -3,4 +3,5 @@
           android:id="@+id/repositor_list_view"
           android:layout_width="match_parent"
           android:layout_height="match_parent"
+          android:background="@drawable/border_ui"
           android:orientation="horizontal"/>
