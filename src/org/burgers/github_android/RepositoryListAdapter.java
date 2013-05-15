@@ -23,8 +23,12 @@ public class RepositoryListAdapter extends ArrayAdapter<Repository> {
 
         View rowView = inflater.inflate(R.layout.row_layout, parent, false);
 
-        TextView view = (TextView) rowView.findViewById(R.id.label);
-        view.setText(repo.getName());
+        TextView name= (TextView) rowView.findViewById(R.id.repository_label);
+        name.setText(repo.getName());
+
+        TextView description = (TextView) rowView.findViewById(R.id.repository_description);
+        description.setText(repo.getDescription());
+
         return rowView;
     }
 }
