@@ -28,6 +28,8 @@ public class RepositoryListActivity extends ListActivity {
             e.printStackTrace();
         }
 
+        setTitle(username);
+        setTitleColor(R.color.white);
         setListAdapter(new RepositoryListAdapter(this, R.layout.row_layout, repositories));
     }
 }
