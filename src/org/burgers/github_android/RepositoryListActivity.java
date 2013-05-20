@@ -29,7 +29,6 @@ public class RepositoryListActivity extends ListActivity {
         }
 
         setTitle(username);
-        setTitleColor(R.color.white);
         setListAdapter(new RepositoryListAdapter(this, R.layout.row_layout, repositories));
     }
 }
