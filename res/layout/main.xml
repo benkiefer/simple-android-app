@@ -1,20 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:orientation="horizontal">
 
     <EditText android:id="@+id/repository_search_username"
-        android:layout_weight="1"
-        android:layout_width="0dp"
+        android:layout_marginTop="20dp"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:gravity="center"
+        android:shadowColor="@color/action_bar_gray"
+        android:shadowDx="0"
+        android:shadowDy="-1"
+        android:shadowRadius="1.5"
         android:padding="10dp"
+        android:textColor="@color/black"
         android:hint="@string/search_username_hint" />
 
     <Button
         android:layout_width="wrap_content"
+        android:layout_below="@id/repository_search_username"
+        android:gravity="center"
+        android:layout_marginTop="20dip"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
         android:layout_height="wrap_content"
-        android:padding="10dp"
+        android:background="@drawable/search_button"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
         android:text="@string/search_button_text"
         android:onClick="findRepositories"/>
-</LinearLayout>
+</RelativeLayout>
