@@ -6,7 +6,9 @@
     <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="15" android:maxSdkVersion="17"/>
     <uses-permission android:name="android.permission.INTERNET"/>
     <application android:label="@string/app_name"
-                 android:icon="@drawable/ic_launcher">
+                 android:icon="@drawable/ic_launcher"
+                 android:theme="@style/CustomActivityTheme">
+
         <activity android:name="org.burgers.github_android.MainActivity"
                   android:label="@string/app_name">
             <intent-filter>
@@ -15,8 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name="org.burgers.github_android.RepositoryListActivity"
-                android:label="@string/repository_search_results_label"
-                android:parentActivityName="org.burgers.github_android.MainActivity">
+                  android:label="@string/repository_search_results_label"
+                  android:parentActivityName="org.burgers.github_android.MainActivity">
             <meta-data android:name="android.support.PARENT_ACTIVITY"
                        android:value="org.burgers.github_android.MainActivity"/>
         </activity>
