@@ -1,7 +1,10 @@
 package org.burgers.github_android;
 
 import android.app.ListActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ListView;
 import org.eclipse.egit.github.core.Repository;
 
 import java.util.ArrayList;
@@ -30,5 +33,16 @@ public class RepositoryListActivity extends ListActivity {
 
         setTitle(username);
         setListAdapter(new RepositoryListAdapter(this, R.layout.row_layout, repositories));
+    }
+
+    @Override
+    protected void onListItemClick(ListView l, View v, int position, long id) {
+        Repository repo = (Repository) l.getItemAtPosition(position);
+
+        Intent intent = new Intent(this, RepositoryDetailsActivity.class);
+
+        intent.putExtra(RepositoryListActivity.USER_NAME, repo.getOwner().getName());
+        intent.putExtra(RepositoryDetailsActivity.REPOSITORY, repo.getName());
+        startActivity(intent);
     }
 }

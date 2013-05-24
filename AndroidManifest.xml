@@ -17,10 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name="org.burgers.github_android.RepositoryListActivity"
-                  android:label="@string/repository_search_results_label"
-                  android:parentActivityName="org.burgers.github_android.MainActivity">
-            <meta-data android:name="android.support.PARENT_ACTIVITY"
-                       android:value="org.burgers.github_android.MainActivity"/>
-        </activity>
+                  android:parentActivityName="org.burgers.github_android.MainActivity"/>
+        <activity android:name="org.burgers.github_android.RepositoryDetailsActivity"
+                  android:parentActivityName="org.burgers.github_android.RepositoryListActivity"/>
     </application>
 </manifest>
