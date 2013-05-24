@@ -3,6 +3,9 @@ package org.burgers.github_android;
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.TextView;
+import org.eclipse.egit.github.core.Repository;
+
+import java.util.concurrent.ExecutionException;
 
 public class RepositoryDetailsActivity extends Activity {
     public static final String REPOSITORY = "repository_list_item";
@@ -12,12 +15,26 @@ public class RepositoryDetailsActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.repository_detail);
 
-//        String username = getIntent().getStringExtra(RepositoryListActivity.USER_NAME);
+        String username = getIntent().getStringExtra(RepositoryListActivity.USER_NAME);
         String repositoryName = getIntent().getStringExtra(RepositoryDetailsActivity.REPOSITORY);
 
-        TextView name = (TextView) findViewById(R.id.repository_detail_name);
-        name.setText(repositoryName);
+        Repository repository = null;
 
-        setTitle(repositoryName);
+        try {
+            repository = new GetUserRepositoryTask().execute(username, repositoryName).get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+
+        if (repository != null){
+            TextView name = (TextView) findViewById(R.id.repository_detail_name);
+            name.setText(repository.getName());
+
+            TextView description = (TextView) findViewById(R.id.repository_details_description);
+            description.setText(repository.getDescription());
+            setTitle(username);
+        }
     }
 }

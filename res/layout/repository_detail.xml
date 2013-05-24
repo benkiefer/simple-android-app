@@ -6,11 +6,31 @@
     android:orientation="horizontal">
 
     <TextView android:id="@+id/repository_detail_name"
-        android:layout_marginTop="20dp"
-        android:layout_width="fill_parent"
+        android:textSize="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
         android:layout_height="wrap_content"
-        android:maxLines="1"
+        android:layout_width="fill_parent"
         android:textColor="@color/black"
-        android:hint="@string/search_username_hint" />
+        />
+
+    <View android:background="@color/grey_border"
+          android:layout_width = "fill_parent"
+          android:layout_height="2dip"
+          android:layout_marginLeft="10dp"
+          android:layout_marginRight="10dp"
+          android:layout_marginTop="10dp"
+          android:id="@+id/repository_details_line"
+          android:layout_below="@id/repository_detail_name"/>
+
+    <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:id="@+id/repository_details_description"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/repository_details_line"/>
 
 </RelativeLayout>

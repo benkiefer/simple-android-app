@@ -41,7 +41,7 @@ public class RepositoryListActivity extends ListActivity {
 
         Intent intent = new Intent(this, RepositoryDetailsActivity.class);
 
-        intent.putExtra(RepositoryListActivity.USER_NAME, repo.getOwner().getName());
+        intent.putExtra(RepositoryListActivity.USER_NAME, repo.getOwner().getLogin());
         intent.putExtra(RepositoryDetailsActivity.REPOSITORY, repo.getName());
         startActivity(intent);
     }

@@ -3,4 +3,5 @@
     <string name="app_name">GitHub</string>
     <string name="search_username_hint">Username</string>
     <string name="search_button_text">Search</string>
+    <string name="repository_details_name_hint">Repository Name</string>
 </resources>
