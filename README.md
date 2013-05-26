@@ -4,7 +4,9 @@ Working on some touchpoints to get myself familiar with the Android ecosystem. S
 Disclaimer: As of the creation of this application, I have never used or seen the actual Github Android application. This project is for educational purposes only.
 
 #Todo
- - Create the basic structure for the application
- - Sign in screen to pick your username
- - Get a list of all your projects
- - drill into project detail?
+ - ~~Sign in screen to pick your username~~
+ - ~~Get a list of all your projects~~
+ - ~~drill into project detail~~
+ - tab swiping
+ - error handling
+ - return home
