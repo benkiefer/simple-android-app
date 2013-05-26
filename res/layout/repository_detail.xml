@@ -33,4 +33,13 @@
             android:layout_marginTop="10dp"
             android:layout_below="@id/repository_details_line"/>
 
+    <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:id="@+id/repository_details_last_updated_date"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/repository_details_description"/>
+
 </RelativeLayout>

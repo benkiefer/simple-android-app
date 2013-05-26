@@ -34,7 +34,19 @@ public class RepositoryDetailsActivity extends Activity {
 
             TextView description = (TextView) findViewById(R.id.repository_details_description);
             description.setText(repository.getDescription());
+
+            TextView lastUpdated = (TextView) findViewById(R.id.repository_details_last_updated_date);
+
+            TimeUpdated timeUpdated = new TimeUpdated(repository.getUpdatedAt());
+
+            if (timeUpdated.isLongerThanMinute()){
+                lastUpdated.setText(String.format("Last updated %d %s ago", timeUpdated.getLength(), timeUpdated.getUnit()));
+            } else {
+                lastUpdated.setText("Last updated a few moments ago");
+            }
+
             setTitle(username);
         }
     }
+
 }
