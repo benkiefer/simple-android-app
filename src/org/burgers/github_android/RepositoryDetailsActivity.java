@@ -21,7 +21,7 @@ public class RepositoryDetailsActivity extends Activity {
         Repository repository = null;
 
         try {
-            repository = new GetUserRepositoryTask().execute(username, repositoryName).get();
+            repository = new GetUserRepositoryTask(this).execute(username, repositoryName).get();
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {

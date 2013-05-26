@@ -22,7 +22,7 @@ public class RepositoryListActivity extends ListActivity {
 
         List<Repository> repositories = null;
         try {
-            repositories = new GetRepositoriesTask().execute(username).get();
+            repositories = new GetRepositoriesTask(this).execute(username).get();
         } catch (InterruptedException e) {
             repositories = new ArrayList<Repository>();
             e.printStackTrace();
