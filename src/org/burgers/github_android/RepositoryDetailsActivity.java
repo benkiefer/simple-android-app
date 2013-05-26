@@ -42,7 +42,7 @@ public class RepositoryDetailsActivity extends Activity {
             if (timeUpdated.isLongerThanMinute()){
                 lastUpdated.setText(String.format("Last updated %d %s ago", timeUpdated.getLength(), timeUpdated.getUnit()));
             } else {
-                lastUpdated.setText("Last updated a few moments ago");
+                lastUpdated.setText("Last updated just now");
             }
 
             setTitle(username);
