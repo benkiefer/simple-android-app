@@ -45,7 +45,6 @@ public class RepositoryDetailsActivity extends Activity {
                 lastUpdated.setText("Last updated just now");
             }
 
-            setTitle(username);
         }
     }
 
