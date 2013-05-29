@@ -42,4 +42,13 @@
             android:layout_marginTop="10dp"
             android:layout_below="@id/repository_details_description"/>
 
+    <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:id="@+id/repository_details_language"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@id/repository_details_description"/>
+
 </RelativeLayout>

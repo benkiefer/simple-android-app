@@ -33,18 +33,28 @@ public class RepositoryDetailsActivity extends Activity {
             name.setText(repository.getName());
 
             TextView description = (TextView) findViewById(R.id.repository_details_description);
-            description.setText(repository.getDescription());
-
-            TextView lastUpdated = (TextView) findViewById(R.id.repository_details_last_updated_date);
-
-            TimeUpdated timeUpdated = new TimeUpdated(repository.getUpdatedAt());
-
-            if (timeUpdated.isLongerThanMinute()){
-                lastUpdated.setText(String.format("Last updated %d %s ago", timeUpdated.getLength(), timeUpdated.getUnit()));
-            } else {
-                lastUpdated.setText("Last updated just now");
+            String descriptionText = repository.getDescription();
+            if (descriptionText == null || descriptionText.isEmpty()){
+                descriptionText = "N/A";
             }
+            description.setText(descriptionText);
 
+            prepareLastUpdated(repository);
+
+            TextView language = (TextView) findViewById(R.id.repository_details_language);
+            language.setText(repository.getLanguage());
+
+        }
+    }
+
+    private void prepareLastUpdated(Repository repository) {
+        TextView lastUpdated = (TextView) findViewById(R.id.repository_details_last_updated_date);
+        TimeUpdated timeUpdated = new TimeUpdated(repository.getUpdatedAt());
+
+        if (timeUpdated.isLongerThanMinute()){
+            lastUpdated.setText(String.format("Last updated %d %s ago", timeUpdated.getLength(), timeUpdated.getUnit()));
+        } else {
+            lastUpdated.setText("Last updated just now");
         }
     }
 

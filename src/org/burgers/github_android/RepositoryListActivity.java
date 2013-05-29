@@ -26,7 +26,7 @@ public class RepositoryListActivity extends ListActivity {
 
         List<Repository> repositories = null;
         try {
-            repositories = new GetRepositoriesTask(this).execute(username).get(10, TimeUnit.SECONDS);
+            repositories = new GetRepositoriesTask(this).execute(username).get(20, TimeUnit.SECONDS);
         } catch (InterruptedException e) {
             repositories = new ArrayList<Repository>();
             e.printStackTrace();
@@ -54,4 +54,5 @@ public class RepositoryListActivity extends ListActivity {
         intent.putExtra(RepositoryDetailsActivity.REPOSITORY, repo.getName());
         startActivity(intent);
     }
+
 }

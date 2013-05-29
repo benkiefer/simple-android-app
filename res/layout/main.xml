@@ -17,6 +17,9 @@
         android:shadowRadius="1.5"
         android:padding="10dp"
         android:textColor="@color/black"
+        android:background="@drawable/button_with_background"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:hint="@string/search_username_hint" />
 
     <Button
